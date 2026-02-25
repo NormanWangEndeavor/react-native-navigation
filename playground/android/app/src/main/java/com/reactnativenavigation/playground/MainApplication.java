@@ -37,7 +37,7 @@ public class MainApplication extends NavigationApplication {
                 }
 
                 @Override
-                protected Boolean isHermesEnabled() {
+                protected boolean isHermesEnabled() {
                     return BuildConfig.IS_HERMES_ENABLED;
                 }
 
@@ -72,6 +72,6 @@ public class MainApplication extends NavigationApplication {
 
     @Override
     public ReactHost getReactHost() {
-        return DefaultReactHost.getDefaultReactHost(this, getReactNativeHost());
+        return DefaultReactHost.getDefaultReactHost(this, getReactNativeHost(), null);
     }
 }

@@ -214,3 +214,4 @@ android/keystores/debug.keystore
 ios/SnapshotTests/FailureDiffs/
 
 android/app/.cxx
+.kotlin/

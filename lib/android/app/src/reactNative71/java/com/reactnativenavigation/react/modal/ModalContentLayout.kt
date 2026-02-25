@@ -49,7 +49,7 @@ class ModalContentLayout(context: Context?) : ReactViewGroup(context), RootView{
             updateFirstChildView()
         }
     }
-    override fun onChildStartedNativeGesture(child: View, androidEvent: MotionEvent) {
+    override fun onChildStartedNativeGesture(child: View?, androidEvent: MotionEvent) {
         mJSTouchDispatcher.onChildStartedNativeGesture(androidEvent, this.getEventDispatcher())
     }
     override fun onChildStartedNativeGesture(androidEvent: MotionEvent) {
@@ -65,7 +65,7 @@ class ModalContentLayout(context: Context?) : ReactViewGroup(context), RootView{
     }
 
 
-    override fun handleException(t: Throwable?) {
+    override fun handleException(t: Throwable) {
         getReactContext().handleException(RuntimeException(t))
     }
 

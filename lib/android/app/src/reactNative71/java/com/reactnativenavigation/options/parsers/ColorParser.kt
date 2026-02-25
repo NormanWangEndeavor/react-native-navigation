@@ -25,9 +25,13 @@ object ColorParser {
                 Colour(json.optInt(colorName))
             }
             is JSONObject -> {
-                ColorPropConverter.getColor(color, context)?.let {
-                    Colour(it)
-                } ?: NullColor()
+                if (context != null) {
+                    ColorPropConverter.getColor(color, context)?.let {
+                        Colour(it)
+                    } ?: NullColor()
+                } else {
+                    NullColor()
+                }
             }
             else -> {
                 NullColor()
